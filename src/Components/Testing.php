@@ -4,7 +4,7 @@ namespace Sixincode\HiveDisplay\Components;
 
 use Illuminate\View\Component;
 
-class Card extends Component
+class Testing extends Component
 {
     public $source;
     public $model;
