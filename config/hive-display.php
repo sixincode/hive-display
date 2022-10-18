@@ -2,7 +2,7 @@
 
 // config for Sixincode/HiveDisplay
 return [
-  'name' => 'hiveFinance',
+  'name' => 'hiveDisplay',
   'identification' => 'hive-finance',
   'models'          => [
       'banner'                       => Sixincode\HiveDisplay\Models\Banner::class,
