@@ -1,6 +1,6 @@
 <?php
 
-namespace Sixincode\HiveDisplay\Components\Layouts\User;
+namespace Sixincode\HiveDisplay\Components\Layouts;
 
 use Illuminate\View\Component;
 

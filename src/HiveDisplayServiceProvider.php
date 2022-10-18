@@ -11,7 +11,6 @@ use Sixincode\HiveDisplay\Components\Partials\Navigation\DefaultNav;
 use Sixincode\HiveDisplay\Components\Partials\Sidebars\DefaultSidebar;
 use Sixincode\HiveDisplay\Components\Banners\DefaultBanner;
 use Sixincode\HiveDisplay\Components\Cards\DefaultCard;
-use Sixincode\HiveDisplay\Components\Layouts\DefaultApp;
 use Sixincode\HiveDisplay\Components\Lists\DefaultList;
 use Sixincode\HiveDisplay\Components\Profiles\DefaultProfile;
 use Sixincode\HiveDisplay\Components\Sections\DefaultSection;
