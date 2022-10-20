@@ -12,10 +12,10 @@ class DefaultApp extends Component
     public array $footer;
     public array $properties;
     public array $meta;
-    public bool $auth = 1;
+    public bool $auth = true;
 
     public function __construct(
-      $component = null,
+      $component = '',
       $nav = [],
       $sidebar = [],
       $footer = [],
@@ -25,9 +25,11 @@ class DefaultApp extends Component
     )
     {
       $this->component = $component;
-      if(is_null($this->component))
-        $this->component = config('display.defaultViews.appLayout.user');
-      endif
+      if($this->component == null){
+        $this->component = config('hive-display.defaultViews.appLayout.user');
+      }
+      // $this->component = config('hive-display.defaultViews.appLayout.user');
+
 
       $this->nav = $nav;
       $this->sidebar = $sidebar;
@@ -39,7 +41,7 @@ class DefaultApp extends Component
 
     public function render()
     {
-        return view('hive-display::components.layouts.'.$component);
+        return view('hive-display::components.layouts.'.$this->component);
     }
 
     public function setDefault()

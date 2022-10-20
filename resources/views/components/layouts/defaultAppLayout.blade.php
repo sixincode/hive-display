@@ -20,26 +20,23 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100 overflow-hidden dark:bg-gray-700 flex" x-data="{ sidebarOpen : true, modalOpen : false }">
+        <div class="min-h-screen bg-white overflow-hidden dark:bg-gray-700 " x-data="{ sidebarOpen : true, modalOpen : false }">
+          <div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-80 lg:flex-col lg:border-r lg:border-gray-200 lg:bg-gray-50">
             <!-- Page Sidebar -->
-            <div class="">
-              <x-hive-display-default-sidebar component='{{$sidebar}}'/>
-            </div>
-            <!-- Page Content -->
-            <div class="">
-              <x-hive-display-default-nav component='{{$nav}}'/>
+             <x-hive-display-default-sidebar />
+           </div>
+             <!-- Page Content -->
+            <div class="flex-1 flex-col lg:pl-80">
+              <x-hive-display-default-nav  />
               <main id="main">
               {{ $slot }}
               </main>
-              <x-hive-display-default-footer component='{{$footer}}'/>
+              <x-hive-display-default-footer />
             </div>
 
         </div>
-
         @stack('modals')
         @stack('scripts')
-        @include('layouts.central.partials.Common')
-
         @livewireScripts
     </body>
 </html>

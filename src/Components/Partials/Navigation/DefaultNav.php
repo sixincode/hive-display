@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 class DefaultNav extends Component
 {
     public $source;
-    public $model;
+    public $component;
     public $identifiant;
     public $class;
     public $type;
@@ -18,8 +18,8 @@ class DefaultNav extends Component
     public array $properties;
 
     public function __construct(
-      $source = 'profiles',
-      $model = 'defaultProfile',
+      $source = 'navigations',
+      $component = '',
       $identifiant = null,
       $class = null,
       $type = null,
@@ -31,7 +31,10 @@ class DefaultNav extends Component
     )
     {
       $this->source = $source;
-      $this->model = $model;
+      $this->component = $component;
+      if($this->component == null){
+        $this->component = config('hive-display.defaultViews.appNav.user');
+      }
       $this->identifiant = $identifiant;
       $this->class = $class;
       $this->type = $type;
@@ -48,6 +51,6 @@ class DefaultNav extends Component
      */
     public function render()
     {
-        return view('hive-display::components.'.$source.'.'.$model);
+      return view('hive-display::components.partials.'.$this->source.'.'.$this->component);
     }
 }
