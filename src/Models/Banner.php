@@ -1,6 +1,6 @@
 <?php
 
-namespace Sixincode\HivePosts\Models;
+namespace Sixincode\HiveDisplay\Models;
 
 class Banner extends Template
 {

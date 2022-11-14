@@ -2,10 +2,17 @@
 
 namespace Sixincode\HiveDisplay\Components\Layouts;
 
+use Sixincode\HiveDisplay\Traits\NavBehaviour;
+use Sixincode\HiveDisplay\Traits\SidebarBehaviour;
+use Sixincode\HiveDisplay\Traits\FooterBehaviour;
 use Illuminate\View\Component;
 
 class DefaultApp extends Component
 {
+    use NavBehaviour;
+    use SidebarBehaviour;
+    use FooterBehaviour;
+
     public $component;
     public array $nav;
     public array $sidebar;
@@ -15,9 +22,11 @@ class DefaultApp extends Component
     public bool $auth = true;
 
     public function __construct(
-      $component = '',
+      $component = null,
       $nav = [],
-      $sidebar = [],
+      $sidebar = [
+        'component' => ''
+      ],
       $footer = [],
       $properties = [],
       $meta = [],
@@ -25,12 +34,14 @@ class DefaultApp extends Component
     )
     {
       $this->component = $component;
+      
       if($this->component == null){
-        $this->component = config('hive-display.defaultViews.appLayout.user');
+         $this->component = config('hive-display.defaultViews.appLayout.user');
+      }
+      if($sidebar['component'] == null){
+         $this->sidebar['component'] = config('hive-display.defaultViews.appLayout.user');
       }
       // $this->component = config('hive-display.defaultViews.appLayout.user');
-
-
       $this->nav = $nav;
       $this->sidebar = $sidebar;
       $this->footer = $footer;
@@ -46,15 +57,10 @@ class DefaultApp extends Component
 
     public function setDefault()
     {
-        $this->nav = [
-          'component' => config('display.defaultViews.appNav.user'),
-        ];
-        $this->sidebar = [
-          'component' => config('display.defaultViews.appSidebar.user'),
-        ];
-        $this->footer = [
-          'component' => config('display.defaultViews.appFooter.user'),
-        ];
+        $this->resetToDefaultAppNav();
+        $this->resetToDefaultAppSidebar();
+        $this->resetToDefaultAppFooter();
+
         $this->properties = [
           'theme'   => 'default',
           'primary' => 'gray',

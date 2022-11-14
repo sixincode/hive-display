@@ -13,6 +13,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.9.0/cdn.min.js" defer></script>
         <script src="https://cdn.tailwindcss.com"></script>
         @livewireStyles
+        @stack('styles')
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
@@ -21,12 +22,12 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-white overflow-hidden dark:bg-gray-700 " x-data="{ sidebarOpen : true, modalOpen : false }">
-          <div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-80 lg:flex-col lg:border-r lg:border-gray-200 lg:bg-gray-50">
+          <div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col lg:border-r lg:border-blue-200 lg:bg-blue-50/60">
             <!-- Page Sidebar -->
              <x-hive-display-default-sidebar />
            </div>
              <!-- Page Content -->
-            <div class="flex-1 flex-col lg:pl-80">
+            <div class="flex-1 flex-col lg:pl-64">
               <x-hive-display-default-nav  />
               <main id="main">
               {{ $slot }}
@@ -36,7 +37,7 @@
 
         </div>
         @stack('modals')
-        @stack('scripts')
         @livewireScripts
+        @stack('scripts')
     </body>
 </html>

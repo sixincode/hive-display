@@ -1,17 +1,20 @@
 <?php
 
-namespace Sixincode\HiveDisplay\Components\Partials\Sidebars;
+namespace Sixincode\HiveDisplay\Components\Links;
 
 use Illuminate\View\Component;
 
-class DefaultSidebar extends Component
+class DefaultLink extends Component
 {
-    public $source;
     public $component;
+    public $color;
+    public $title;
+    public $url;
+    public $icon;
+    public $source;
     public $identifiant;
     public $class;
     public $type;
-    public array $links;
     public array $texts;
     public array $content;
     public array $urls;
@@ -19,8 +22,12 @@ class DefaultSidebar extends Component
     public array $properties;
 
     public function __construct(
-      $source = 'sidebars',
       $component = null,
+      $color = '',
+      $title = '',
+      $url = '',
+      $icon = '',
+      $source = 'links',
       $identifiant = null,
       $class = null,
       $type = null,
@@ -29,19 +36,18 @@ class DefaultSidebar extends Component
       $urls = [],
       $images = [],
       $properties = [],
-      $links = [],
     )
     {
+      $this->color = $color;
       $this->source = $source;
-      $this->links = $links;
       $this->component = $component;
-      if($this->component == null){
-        $this->component = config('hive-display.defaultViews.appSidebar.user');
-      }
-      if($this->links == null){
-        $this->links = config('hive-menu.default_app');
+      if($this->component == null ){
+        $this->component = config('hive-display.defaultViews.appSidebarLink.user');
       }
       $this->identifiant = $identifiant;
+      $this->title = $title;
+      $this->url = $url;
+      $this->icon = $icon;
       $this->class = $class;
       $this->type = $type;
       $this->texts = $texts;
@@ -57,6 +63,6 @@ class DefaultSidebar extends Component
      */
     public function render()
     {
-        return view('hive-display::components.partials.'.$this->source.'.'.$this->component);
+      return view('hive-display::components.partials.'.$this->source.'.'.$this->component);
     }
 }

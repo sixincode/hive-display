@@ -20,14 +20,32 @@ return [
         'central' => '',
         'user'    => 'defaultAppLayout',
       ],
-      'appFooter'                  => [
-        'central' => '',
-        'user'    => 'defaultAppFooter',
-      ],
       'appNav'                  => [
         'central' => '',
         'user'    => 'defaultAppNav',
       ],
+      'appSidebar'                  => [
+        'central' => '',
+        'user'    => 'appSidebar',
+      ],
+      'appSidebarLink'              => [
+        'central' => '',
+        'user'    => 'defaultLink',
+      ],
+      'appFooter'                  => [
+        'central' => '',
+        'user'    => 'defaultAppFooter',
+      ],
+      'sectionsSource'   => 'sections',
+      'sectionsSource'   => 'sections',
+      'cardsSource'   => 'cards',
+
+      'defaultCard'     => 'defaultCard',
+      'defaultSource'   => 'sections',
+      'defaultComponent'   => 'defaultSection',
+      'boxedSection'   => 'defaultSection',
+      'card'   => 'defaultCard',
+
     ],
 
 ];

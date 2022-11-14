@@ -32,6 +32,7 @@
         <div class="flex-1 flex">
 
         </div>
+        @auth
         <div class="ml-4 flex items-center md:ml-6 space-x-4">
             <a x-tooltip.raw="View Site" href="http://ngodere.com" target="_blank" class="text-secondary-500 hover:text-secondary-900 dark:text-secondary-400 dark:hover:text-white">
                 <svg class="h-5 w-5" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -43,7 +44,7 @@
     <div @click="open = ! open">
         <button class="max-w-xs flex items-center text-sm rounded-full overflow-hidden focus:outline-none hover:bg-secondary-50 dark:focus:bg-secondary-700 dark:hover:bg-secondary-800 lg:p-1.5 lg:rounded-md">
             <img class="h-8 w-8 rounded-full" src="https://ui-avatars.com/api/?name=John+Doe&amp;color=1d4ed8&amp;background=dbeafe" alt="admin@admin.com">
-            <span class="hidden ml-3 text-secondary-900 dark:text-white text-sm leading-5 font-medium lg:block">John Doe</span>
+            <span class="hidden ml-3 text-secondary-900 dark:text-white text-sm leading-5 font-medium lg:block">{{ Auth::user()->name }}</span>
             <svg class="hidden shrink-0 ml-1 h-5 w-5 text-secondary-400 lg:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
 </svg>        </button>
@@ -56,7 +57,7 @@
                 Signed in with
             </p>
             <p class="text-sm leading-5 font-medium text-secondary-900 dark:text-white truncate">
-                admin@admin.com
+                {{ Auth::user()->email }}
             </p>
         </div>
                     <div class="border-t border-secondary-100 dark:border-secondary-700"></div>
@@ -92,8 +93,8 @@
         </div>
     </div>
 </div>
-
-<!-- Livewire Component wire-end:R2MVnpNlmc0ffjRFUeUZ -->        </div>
+  </div>
+  @endauth
     </div>
 </div>
 </nav>
