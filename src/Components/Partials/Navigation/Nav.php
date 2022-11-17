@@ -1,17 +1,16 @@
 <?php
 
-namespace Sixincode\HiveDisplay\Components\Partials\Sidebars;
+namespace Sixincode\HiveDisplay\Components\Partials\Navigation;
 
 use Illuminate\View\Component;
 
-class DefaultSidebar extends Component
+class Nav extends Component
 {
     public $source;
     public $component;
     public $identifiant;
     public $class;
     public $type;
-    public array $links;
     public array $texts;
     public array $content;
     public array $urls;
@@ -19,8 +18,8 @@ class DefaultSidebar extends Component
     public array $properties;
 
     public function __construct(
-      $source = 'sidebars',
-      $component = null,
+      $source = 'navigations',
+      $component = '',
       $identifiant = null,
       $class = null,
       $type = null,
@@ -29,17 +28,12 @@ class DefaultSidebar extends Component
       $urls = [],
       $images = [],
       $properties = [],
-      $links = [],
     )
     {
       $this->source = $source;
-      $this->links = $links;
       $this->component = $component;
       if($this->component == null){
-        $this->component = config('hive-display.defaultViews.appSidebar.user');
-      }
-      if($this->links == null){
-        $this->links = config('hive-menu.default_app');
+        $this->component = config('hive-display.defaultViews.appNav.user');
       }
       $this->identifiant = $identifiant;
       $this->class = $class;
@@ -57,6 +51,6 @@ class DefaultSidebar extends Component
      */
     public function render()
     {
-        return view('hive-display::components.partials.'.$this->source.'.'.$this->component);
+      return view('hive-display::components.partials.'.$this->source.'.'.$this->component);
     }
 }

@@ -1,16 +1,17 @@
 <?php
 
-namespace Sixincode\HiveDisplay\Components\Partials\Footers;
+namespace Sixincode\HiveDisplay\Components\Partials\Sidebars;
 
 use Illuminate\View\Component;
 
-class DefaultFooter extends Component
+class Sidebar extends Component
 {
     public $source;
     public $component;
     public $identifiant;
     public $class;
     public $type;
+    public array $links;
     public array $texts;
     public array $content;
     public array $urls;
@@ -18,8 +19,8 @@ class DefaultFooter extends Component
     public array $properties;
 
     public function __construct(
-      $source = 'footers',
-      $component = '',
+      $source = 'sidebars',
+      $component = null,
       $identifiant = null,
       $class = null,
       $type = null,
@@ -28,12 +29,17 @@ class DefaultFooter extends Component
       $urls = [],
       $images = [],
       $properties = [],
+      $links = [],
     )
     {
       $this->source = $source;
+      $this->links = $links;
       $this->component = $component;
       if($this->component == null){
-        $this->component = config('hive-display.defaultViews.appFooter.user');
+        $this->component = config('hive-display.defaultViews.appSidebar.user');
+      }
+      if($this->links == null){
+        $this->links = config('hive-menu.default_app');
       }
       $this->identifiant = $identifiant;
       $this->class = $class;
@@ -51,6 +57,6 @@ class DefaultFooter extends Component
      */
     public function render()
     {
-      return view('hive-display::components.partials.'.$this->source.'.'.$this->component);
+        return view('hive-display::components.partials.'.$this->source.'.'.$this->component);
     }
 }

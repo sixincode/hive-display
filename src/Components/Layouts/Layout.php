@@ -7,7 +7,7 @@ use Sixincode\HiveDisplay\Traits\SidebarBehaviour;
 use Sixincode\HiveDisplay\Traits\FooterBehaviour;
 use Illuminate\View\Component;
 
-class DefaultApp extends Component
+class Layout extends Component
 {
     use NavBehaviour;
     use SidebarBehaviour;
@@ -34,7 +34,7 @@ class DefaultApp extends Component
     )
     {
       $this->component = $component;
-      
+
       if($this->component == null){
          $this->component = config('hive-display.defaultViews.appLayout.user');
       }

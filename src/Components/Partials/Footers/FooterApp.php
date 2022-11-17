@@ -1,10 +1,10 @@
 <?php
 
-namespace Sixincode\HiveDisplay\Components\Partials\Navigation;
+namespace Sixincode\HiveDisplay\Components\Partials\Footers;
 
 use Illuminate\View\Component;
 
-class DefaultNav extends Component
+class FooterApp extends Component
 {
     public $source;
     public $component;
@@ -18,7 +18,7 @@ class DefaultNav extends Component
     public array $properties;
 
     public function __construct(
-      $source = 'navigations',
+      $source = 'footers',
       $component = '',
       $identifiant = null,
       $class = null,
@@ -33,7 +33,7 @@ class DefaultNav extends Component
       $this->source = $source;
       $this->component = $component;
       if($this->component == null){
-        $this->component = config('hive-display.defaultViews.appNav.user');
+        $this->component = config('hive-display.defaultViews.appFooter.user');
       }
       $this->identifiant = $identifiant;
       $this->class = $class;

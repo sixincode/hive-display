@@ -18,15 +18,15 @@ return [
   'defaultViews'    => [
       'appLayout'                  => [
         'central' => '',
-        'user'    => 'defaultAppLayout',
+        'user'    => 'app.defaultAppLayout',
       ],
       'appNav'                  => [
         'central' => '',
-        'user'    => 'defaultAppNav',
+        'user'    => 'app.defaultAppNav',
       ],
       'appSidebar'                  => [
         'central' => '',
-        'user'    => 'appSidebar',
+        'user'    => 'app.appSidebar',
       ],
       'appSidebarLink'              => [
         'central' => '',
@@ -34,7 +34,7 @@ return [
       ],
       'appFooter'                  => [
         'central' => '',
-        'user'    => 'defaultAppFooter',
+        'user'    => 'app.defaultAppFooter',
       ],
       'sectionsSource'   => 'sections',
       'sectionsSource'   => 'sections',
