@@ -33,7 +33,7 @@ class Footer extends Component
       $this->source = $source;
       $this->component = $component;
       if($this->component == null){
-        $this->component = config('hive-display.defaultViews.appFooter.user');
+        $this->component = config('hive-display.defaultViews.footer.central.user');
       }
       $this->identifiant = $identifiant;
       $this->class = $class;

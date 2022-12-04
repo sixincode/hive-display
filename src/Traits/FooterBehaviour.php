@@ -4,6 +4,15 @@ namespace Sixincode\HiveDisplay\Traits;
 
 trait FooterBehaviour
 {
+  public array $footer;
+
+  public function mountFooterBehaviour()
+  {
+    $this->footer = [
+
+     ];
+  }
+
   public function resetToDefaultAppFooter()
   {
     $this->footer = [

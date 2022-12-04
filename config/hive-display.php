@@ -16,25 +16,9 @@ return [
       'owner_morph_type'
     ],
   'defaultViews'    => [
-      'appLayout'                  => [
-        'central' => '',
-        'user'    => 'app.defaultAppLayout',
-      ],
-      'appNav'                  => [
-        'central' => '',
-        'user'    => 'app.defaultAppNav',
-      ],
-      'appSidebar'                  => [
-        'central' => '',
-        'user'    => 'app.appSidebar',
-      ],
       'appSidebarLink'              => [
         'central' => '',
         'user'    => 'defaultLink',
-      ],
-      'appFooter'                  => [
-        'central' => '',
-        'user'    => 'app.defaultAppFooter',
       ],
       'sectionsSource'   => 'sections',
       'sectionsSource'   => 'sections',
@@ -45,6 +29,69 @@ return [
       'defaultComponent'   => 'defaultSection',
       'boxedSection'   => 'defaultSection',
       'card'   => 'defaultCard',
+
+
+  'layout'                  => [
+      'central' => [
+        'user'    => 'central.defaultCentralUserLayout',
+        'admin'   => 'central.defaultCentralAdminLayout',
+      ],
+      'app'     => [
+        'user'    => 'app.defaultAppUserLayout',
+        'admin'   => 'app.defaultAppAdminLayout',
+      ],
+      'auth'    => [
+        'user'    => 'auth.defaultAuthUserLayout',
+        'admin'   => 'auth.defaultAuthAdminLayout',
+      ],
+    ],
+
+    'navigation'                  => [
+        'central' => [
+          'user'    => 'central.defaultCentralUserNav',
+          'admin'   => 'central.defaultCentralAdminNav',
+        ],
+        'app'     => [
+          'user'    => 'app.defaultAppUserNav',
+          'admin'   => 'app.defaultAppAdminNav',
+        ],
+        'auth'    => [
+          'user'   =>  'auth.defaultAuthUserNav',
+          'admin'  =>  'auth.defaultAuthAdminNav',
+        ],
+      ],
+
+  'sidebar'                  => [
+      'central' => [
+        'user'    => 'central.defaultCentralUserSideBar',
+        'admin'   => 'central.defaultCentralAdminSideBar',
+      ],
+      'app'     => [
+        'user'    => 'app.defaultAppUserSideBar',
+        'admin'   => 'app.defaultAppAdminSideBar',
+      ],
+      'auth'    => [
+        'user'   =>  'auth.defaultAuthUserSideBar',
+        'admin'  =>  'auth.defaultAuthAdminSideBar',
+      ],
+    ],
+
+  'footer'                  => [
+      'central' => [
+        'user'    => 'central.defaultCentralUserFooter',
+        'admin'   => 'central.defaultCentralAdminFooter',
+      ],
+      'app'     => [
+        'user'    => 'app.defaultAppUserFooter',
+        'admin'   => 'app.defaultAppAdminFooter',
+      ],
+      'auth'    => [
+        'user'   =>  'auth.defaultAuthUserFooter',
+        'admin'  =>  'auth.defaultAuthAdminFooter',
+      ],
+    ],
+
+
 
     ],
 

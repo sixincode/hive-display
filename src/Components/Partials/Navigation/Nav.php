@@ -33,7 +33,7 @@ class Nav extends Component
       $this->source = $source;
       $this->component = $component;
       if($this->component == null){
-        $this->component = config('hive-display.defaultViews.appNav.user');
+        $this->component = config('hive-display.defaultViews.navigation.central.user');
       }
       $this->identifiant = $identifiant;
       $this->class = $class;

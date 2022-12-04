@@ -36,7 +36,7 @@ class SidebarApp extends Component
       $this->links = $links;
       $this->component = $component;
       if($this->component == null){
-        $this->component = config('hive-display.defaultViews.appSidebar.user');
+        $this->component = config('hive-display.defaultViews.sidebar.app.user');
       }
       if($this->links == null){
         $this->links = config('hive-menu.default_app');

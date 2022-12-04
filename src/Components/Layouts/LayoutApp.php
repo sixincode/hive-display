@@ -14,45 +14,54 @@ class LayoutApp extends Component
     use FooterBehaviour;
 
     public $component;
-    public array $nav;
-    public array $sidebar;
-    public array $footer;
     public array $properties;
     public array $meta;
-    public bool $auth = true;
 
     public function __construct(
       $component = null,
-      $nav = [],
-      $sidebar = [
-        'component' => ''
-      ],
-      $footer = [],
+      $sidebar = null,
+      $footer = null,
+      $navigation = null,
       $properties = [],
       $meta = [],
-      $auth = true,
     )
     {
-      $this->component = $component;
+       $this->getComponentToDisplay($component);
+       $this->mountSidebarBehaviour($sidebar);
+       $this->mountNavigationBehaviour($navigation);
+       $this->mountFooterBehaviour($footer);
 
-      if($this->component == null){
-         $this->component = config('hive-display.defaultViews.appLayout.user');
-      }
-      if($sidebar['component'] == null){
-         $this->sidebar['component'] = config('hive-display.defaultViews.appLayout.user');
-      }
-      // $this->component = config('hive-display.defaultViews.appLayout.user');
-      $this->nav = $nav;
-      $this->sidebar = $sidebar;
-      $this->footer = $footer;
-      $this->properties = $properties;
-      $this->meta = $meta;
-      $this->auth = $auth;
+       $this->properties = $properties;
+       $this->meta = $meta;
     }
 
     public function render()
     {
         return view('hive-display::components.layouts.'.$this->component);
+    }
+
+    public function getComponentToDisplay($component)
+    {
+      switch($component)
+      {
+       case('admin'):
+         $this->component = config('hive-display.defaultViews.layout.auth.admin');
+         break;
+       default:
+         $this->component = config('hive-display.defaultViews.layout.auth.user');
+       }
+    }
+
+    public function getSidebar()
+    {
+      switch($sidebar['component'])
+      {
+       case('admin'):
+         $this->sidebar['component'] =  config('hive-display.defaultViews.sidebar.auth.admin') ;
+         break;
+       default:
+         $this->component = config('hive-display.defaultViews.layout.auth.user');
+       }
     }
 
     public function setDefault()

@@ -19,7 +19,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
- 
+
         <div class="min-h-screen bg-white overflow-hidden dark:bg-gray-700 " x-data="{ sidebarOpen : true, modalOpen : false }">
           <div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col lg:border-r lg:border-blue-200 lg:bg-blue-50/60">
             <!-- Page Sidebar -->

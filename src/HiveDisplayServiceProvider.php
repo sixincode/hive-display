@@ -5,6 +5,7 @@ namespace Sixincode\HiveDisplay;
 use Sixincode\ModulesInit\Package;
 use Sixincode\ModulesInit\PackageServiceProvider;
 use Sixincode\HiveDisplay\Components\Layouts\Layout;
+use Sixincode\HiveDisplay\Components\Layouts\LayoutAuth;
 use Sixincode\HiveDisplay\Components\Layouts\LayoutApp;
 use Sixincode\HiveDisplay\Components\Partials\Footers\Footer;
 use Sixincode\HiveDisplay\Components\Partials\Footers\FooterApp;
@@ -37,6 +38,7 @@ class HiveDisplayServiceProvider extends PackageServiceProvider
                 'hive-display',
                 Layout::class,
                 LayoutApp::class,
+                LayoutAuth::class,
                 Footer::class,
                 FooterApp::class,
                 Nav::class,
