@@ -8,6 +8,6 @@ $classes = ($active ?? false)
 <div>
   <a href="{{$url}}" aria-current="page" {{ $attributes->merge(['class' => $classes]) }}>
   <span class="w-2.5 h-2.5 mr-4 bg-{{$color}}-500 rounded-full" aria-hidden="true"></span>
-  <span class="truncate">{{$title}}</span>
+  <span class="truncate lg:hidden lg:sidebar-expanded:block">{{$title}}</span>
   </a>
 </div>

@@ -76,6 +76,17 @@ return [
       ],
     ],
 
+    'header'                  => [
+      'central' => [
+        'user'    => 'central.defaultCentralUserHeader',
+        'admin'   => 'central.defaultCentralAdminHeader',
+      ],
+        'auth'    => [
+          'user'   =>  'auth.defaultAuthUserHeader',
+          'admin'  =>  'auth.defaultAuthAdminHeader',
+        ],
+      ],
+
   'footer'                  => [
       'central' => [
         'user'    => 'central.defaultCentralUserFooter',

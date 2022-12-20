@@ -2,8 +2,8 @@
 
 @php
 $classes = ($current ?? false)
-            ? 'bg-gray-200/90 bg-opacity-100 text-gray-900 group flex items-center px-2 py-1.5 text-base leading-5 font-medium rounded'
-            : 'text-gray-800 hover:text-gray-900 hover:bg-gray-200/60 group flex items-center px-2 py-1.5 text-sm leading-5 font-medium rounded';
+            ? 'bg-slate-100/90  text-gray-900 group flex items-center px-2 py-1.5 text-sm leading-5 font-medium rounded'
+            : 'text-slate-600 hover:text-gray-900 hover:bg-gray-200/60 group flex items-center px-2 py-1.5 text-sm leading-5 font-medium rounded';
 $iconClasses = ($current ?? false)
             ? 'text-gray-500'
             : 'text-gray-400 group-hover:text-gray-500';

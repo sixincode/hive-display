@@ -18,7 +18,12 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+       <body
+      class="font-inter antialiased bg-slate-100 text-slate-600"
+      :class="{ 'sidebar-expanded': sidebarExpanded }"
+      x-data="{ sidebarOpen: false, sidebarExpanded: localStorage.getItem('sidebar-expanded') == 'true' }"
+      x-init="$watch('sidebarExpanded', value => localStorage.setItem('sidebar-expanded', value))"
+  >
         <div class="min-h-screen bg-white overflow-hidden dark:bg-gray-700 " x-data="{ sidebarOpen : true, modalOpen : false }">
              <!-- Page Content -->
                <main id="main">

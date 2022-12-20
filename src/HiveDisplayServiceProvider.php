@@ -11,6 +11,7 @@ use Sixincode\HiveDisplay\Components\Partials\Footers\Footer;
 use Sixincode\HiveDisplay\Components\Partials\Footers\FooterApp;
 use Sixincode\HiveDisplay\Components\Partials\Navigation\Nav;
 use Sixincode\HiveDisplay\Components\Partials\Navigation\NavApp;
+use Sixincode\HiveDisplay\Components\Partials\Headers\Header;
 use Sixincode\HiveDisplay\Components\Partials\Sidebars\Sidebar;
 use Sixincode\HiveDisplay\Components\Partials\Sidebars\SidebarApp;
 use Sixincode\HiveDisplay\Components\Banners\Banner;
@@ -44,6 +45,7 @@ class HiveDisplayServiceProvider extends PackageServiceProvider
                 Nav::class,
                 NavApp::class,
                 Sidebar::class,
+                Header::class,
                 SidebarApp::class,
 
                 Banner::class,

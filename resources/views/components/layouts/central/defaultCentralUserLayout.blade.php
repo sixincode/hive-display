@@ -19,8 +19,8 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
- 
-        <div class="min-h-screen bg-white overflow-hidden dark:bg-gray-700 " x-data="{ sidebarOpen : true, modalOpen : false }">
+
+        <div class="min-h-screen bg-white overflow-hidden dark:bg-gray-700" x-data="{ sidebarOpen : true, modalOpen : false }">
              <!-- Page Content -->
             <div class="flex">
               <main id="main">
