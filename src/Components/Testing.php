@@ -8,7 +8,7 @@ class Testing extends Component
 {
     public $source;
     public $model;
-    public $identifiant;
+    public $identification;
     public $class;
     public $type;
     public array $texts;
@@ -20,7 +20,7 @@ class Testing extends Component
     public function __construct(
       $source = 'sections',
       $model = 'defaultSection',
-      $identifiant = null,
+      $identification = null,
       $class = null,
       $type = null,
       $texts = [],
@@ -32,7 +32,7 @@ class Testing extends Component
     {
       $this->source = $source;
       $this->model = $model;
-      $this->identifiant = $identifiant;
+      $this->identification = $identification;
       $this->class = $class;
       $this->type = $type;
       $this->texts = $texts;

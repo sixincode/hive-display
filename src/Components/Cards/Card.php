@@ -2,9 +2,9 @@
 
 namespace Sixincode\HiveDisplay\Components\Cards;
 
-use Sixincode\HiveDisplay\Components\TemplateElement;
+use Sixincode\HiveDisplay\Components\Base\CardTemplateElement;
 
-class Card extends TemplateElement
+class Card extends CardTemplateElement
 {
     public function setDefaultSource()
     {

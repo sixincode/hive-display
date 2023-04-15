@@ -3,107 +3,100 @@
 // config for Sixincode/HiveDisplay
 return [
   'name' => 'hiveDisplay',
-  'identification' => 'hive-finance',
-  'models'          => [
+  'identification'     => 'hive-display',
+  'models'             => [
       'banner'                       => Sixincode\HiveDisplay\Models\Banner::class,
    ],
-  'table_names'     => [
+  'table_names'        => [
       'banners'                      => 'banners',
     ],
-  'column_names'    => [
-      'global_key'                  => 'global',
-      'owner_morph_key'             => 'owner_id',
-      'owner_morph_type'
+  'column_names'       => [
+    //
     ],
-  'defaultViews'    => [
+  'defaultViewsBase'     => 'hive-display::components',
+  'defaultViews'       => [
       'appSidebarLink'              => [
         'central' => '',
         'user'    => 'defaultLink',
       ],
-      'sectionsSource'   => 'sections',
-      'sectionsSource'   => 'sections',
-      'cardsSource'   => 'cards',
+      'defaultSource'        => 'default',
+      'defaultComponent'     => 'defaultComponent',
 
-      'defaultCard'     => 'defaultCard',
-      'defaultSource'   => 'sections',
-      'defaultComponent'   => 'defaultSection',
-      'boxedSection'   => 'defaultSection',
-      'card'   => 'defaultCard',
+      'bannersSource'        => 'banners',
+      'cardsSource'          => 'cards',
+      'dropdownsSource'      => 'dropdowns',
+      'formsSource'          => 'forms',
+      'linksSource'          => 'links',
+      'listsSource'          => 'lists',
+      'modalsSource'         => 'modals',
+      'pagesSource'          => 'pages',
+      'sectionsSource'       => 'sections',
+      'slideOversSource'     => 'slideOvers',
+      'tabSource'            => 'tabs',
+
+      'defaultBanner'        => 'defaultBanner',
+      'defaultCard'          => 'defaultCard',
+      'defaultDropdown'      => 'defaultDropdown',
+      'defaultForm'          => 'defaultForm',
+      'defaultLink'          => 'defaultLink',
+      'defaultList'          => 'defaultList',
+      'defaultModal'         => 'defaultModal',
+      'defaultPage'          => 'defaultPage',
+      'defaultSlideOver'     => 'defaultSlideOver',
+      'defaultSection'       => 'defaultSection',
+      'defaultTab'           => 'defaultTab',
+
+      'accordionsSource'     => 'tabs.accordions',
+      'accordionsItemSource' => 'tabs.accordions.items',
+      'defaultAccordion'     => 'defaultAccordion',
+      'defaultAccordionItem' => 'defaultAccordionItem',
 
 
-  'layout'                  => [
-      'central' => [
-        'user'    => 'central.defaultCentralUserLayout',
-        'admin'   => 'central.defaultCentralAdminLayout',
-      ],
-      'app'     => [
-        'user'    => 'app.defaultAppUserLayout',
-        'admin'   => 'app.defaultAppAdminLayout',
-      ],
-      'auth'    => [
-        'user'    => 'auth.defaultAuthUserLayout',
-        'admin'   => 'auth.defaultAuthAdminLayout',
-      ],
+      'layouts'               => [
+        'layoutsSource'           => 'layouts.main',
+        'layoutsAdminSource'      => 'layouts.admin',
+        'layoutsAppSource'        => 'layouts.app',
+        'defaultLayout'           => 'defaultLayout',
+        'defaultLayoutAdmin'      => 'defaultLayoutAdmin',
+        'defaultLayoutApp'        => 'defaultLayoutApp',
+        ],
+      'navigations'               => [
+        'navigationsSource'           => 'partials.navigations.main',
+        'navigationsAdminSource'      => 'partials.navigations.admin',
+        'navigationsAppSource'        => 'partials.navigations.app',
+        'defaultNavigation'       => 'defaultNav',
+        'defaultNavigationAdmin'  => 'defaultNavAdmin',
+        'defaultNavigationApp'    => 'defaultNavApp',
+        ],
+      'sidebars'               => [
+        'sidebarsSource'           => 'partials.sidebars.main',
+        'sidebarsAdminSource'      => 'partials.sidebars.admin',
+        'sidebarsAppSource'        => 'partials.sidebars.app',
+        'defaultSidebar'           => 'defaultSidebar',
+        'defaultSidebarAdmin'      => 'defaultSidebarAdmin',
+        'defaultSidebarApp'        => 'defaultSidebarApp',
+        ],
+      'headers'               => [
+        'headersSource'            => 'partials.headers.main',
+        'headersAdminSource'       => 'partials.headers.admin',
+        'headersAppSource'         => 'partials.headers.app',
+        'defaultHeader'            => 'defaultHeader',
+        'defaultHeaderAdmin'       => 'defaultHeaderAdmin',
+        'defaultHeaderApp'         => 'defaultHeaderApp',
+        ],
+      'footers'               => [
+        'footersSource'            => 'partials.footers.main',
+        'footersAdminSource'       => 'partials.footers.admin',
+        'footersAppSource'         => 'partials.footers.app',
+        'defaultFooter'            => 'defaultFooter',
+        'defaultFooterAdmin'       => 'defaultFooterAdmin',
+        'defaultFooterApp'         => 'defaultFooterApp',
+        ],
     ],
 
-    'navigation'                  => [
-        'central' => [
-          'user'    => 'central.defaultCentralUserNav',
-          'admin'   => 'central.defaultCentralAdminNav',
-        ],
-        'app'     => [
-          'user'    => 'app.defaultAppUserNav',
-          'admin'   => 'app.defaultAppAdminNav',
-        ],
-        'auth'    => [
-          'user'   =>  'auth.defaultAuthUserNav',
-          'admin'  =>  'auth.defaultAuthAdminNav',
-        ],
+    'cssFrameworks'    => [
+      'tailwind'            => 'tailwind',
+      'bootstrap'           => 'bootstrap',
       ],
-
-  'sidebar'                  => [
-      'central' => [
-        'user'    => 'central.defaultCentralUserSideBar',
-        'admin'   => 'central.defaultCentralAdminSideBar',
-      ],
-      'app'     => [
-        'user'    => 'app.defaultAppUserSideBar',
-        'admin'   => 'app.defaultAppAdminSideBar',
-      ],
-      'auth'    => [
-        'user'   =>  'auth.defaultAuthUserSideBar',
-        'admin'  =>  'auth.defaultAuthAdminSideBar',
-      ],
-    ],
-
-    'header'                  => [
-      'central' => [
-        'user'    => 'central.defaultCentralUserHeader',
-        'admin'   => 'central.defaultCentralAdminHeader',
-      ],
-        'auth'    => [
-          'user'   =>  'auth.defaultAuthUserHeader',
-          'admin'  =>  'auth.defaultAuthAdminHeader',
-        ],
-      ],
-
-  'footer'                  => [
-      'central' => [
-        'user'    => 'central.defaultCentralUserFooter',
-        'admin'   => 'central.defaultCentralAdminFooter',
-      ],
-      'app'     => [
-        'user'    => 'app.defaultAppUserFooter',
-        'admin'   => 'app.defaultAppAdminFooter',
-      ],
-      'auth'    => [
-        'user'   =>  'auth.defaultAuthUserFooter',
-        'admin'  =>  'auth.defaultAuthAdminFooter',
-      ],
-    ],
-
-
-
-    ],
 
 ];

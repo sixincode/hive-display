@@ -1,53 +1,18 @@
 <?php
 
-namespace Sixincode\HiveDisplay\Components\Forms;
+namespace Sixincode\HiveDisplay\Components\Cards;
 
-use Illuminate\View\Component;
+use Sixincode\HiveDisplay\Components\Base\FormTemplateElement;
 
-class DefaultForm extends Component
+class Form extends FormTemplateElement
 {
-    public $source;
-    public $model;
-    public $identifiant;
-    public $class;
-    public $type;
-    public array $texts;
-    public array $content;
-    public array $urls;
-    public array $images;
-    public array $properties;
-
-    public function __construct(
-      $source = 'banners',
-      $model = 'defaultBanner',
-      $identifiant = null,
-      $class = null,
-      $type = null,
-      $texts = [],
-      $content = [],
-      $urls = [],
-      $images = [],
-      $properties = [],
-    )
+    public function setDefaultSource()
     {
-      $this->source = $source;
-      $this->model = $model;
-      $this->identifiant = $identifiant;
-      $this->class = $class;
-      $this->type = $type;
-      $this->texts = $texts;
-      $this->content = $content;
-      $this->urls = $urls;
-      $this->images = $images;
-      $this->properties = $properties;
+      return $this->source = config('hive-display.defaultViews.formsSource');
     }
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
-    public function render()
+
+    public function setDefaultComponent()
     {
-        return view('hive-display::components.'.$source.'.'.$model);
+      return $this->component = config('hive-display.defaultViews.defaultForm');
     }
 }
