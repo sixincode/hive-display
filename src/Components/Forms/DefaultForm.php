@@ -1,10 +1,10 @@
 <?php
 
-namespace Sixincode\HiveDisplay\Components\Cards;
+namespace Sixincode\HiveDisplay\Components\Forms;
 
 use Sixincode\HiveDisplay\Components\Base\FormTemplateElement;
 
-class Form extends FormTemplateElement
+class DefaultForm extends FormTemplateElement
 {
     public function setDefaultSource()
     {

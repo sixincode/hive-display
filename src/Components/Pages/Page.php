@@ -1,6 +1,6 @@
 <?php
 
-namespace Sixincode\HiveDisplay\Components\Cards;
+namespace Sixincode\HiveDisplay\Components\Pages;
 
 use Sixincode\HiveDisplay\Components\Base\PageTemplateElement;
 
