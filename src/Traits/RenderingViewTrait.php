@@ -2,9 +2,11 @@
 
 namespace Sixincode\HiveDisplay\Traits;
 use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
 
 trait RenderingViewTrait
 {
+  use Macroable;
   public $base;
   public $cssFramework;
   public $source;
@@ -67,9 +69,9 @@ trait RenderingViewTrait
      if(!$this->base){
        $checkBase = method_exists($this,"setDefaultBase");
        if($checkBase){
-         $this->setDefaultBase();
+          $this->setDefaultBase();
        }else{
-         $this->base = $this->getBlankBase();
+          $this->getBlankBase();
        }
      }
 
@@ -102,6 +104,6 @@ trait RenderingViewTrait
 
    public function getBlankBase()
    {
-     return 'hive-display::components';
+     return $this->base = "hive-display::components";
    }
 }

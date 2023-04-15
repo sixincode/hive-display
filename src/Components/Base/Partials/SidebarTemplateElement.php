@@ -60,8 +60,11 @@ class SidebarTemplateElement extends Component
       $this->properties = $properties;
 
       $this->renderViewSettings();
-
     }
 
+    public function setDefaultBase()
+    {
+      return $this->base = base_sidebars();
+    }
 
 }

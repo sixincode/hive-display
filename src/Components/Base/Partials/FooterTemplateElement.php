@@ -60,7 +60,11 @@ class FooterTemplateElement extends Component
       $this->properties = $properties;
 
       $this->renderViewSettings();
+    }
 
+    public function setDefaultBase()
+    {
+      return $this->base = base_footers();
     }
 
 

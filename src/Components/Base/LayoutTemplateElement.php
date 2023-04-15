@@ -23,6 +23,7 @@ class LayoutTemplateElement extends Component
     public $class;
     public $padding;
     public $type;
+    public $baseLayout;
     public array $meta;
     public array $details;
     public array $texts;
@@ -38,6 +39,7 @@ class LayoutTemplateElement extends Component
       $component = null,
       $class = null,
       $type = null,
+      $baseLayout = null,
       $padding = false,
       $details = [],
       $texts = [],
@@ -67,11 +69,16 @@ class LayoutTemplateElement extends Component
       $this->images[] = $images;
       $this->properties = $properties;
       $this->meta = $meta;
+      $this->baseLayout = $baseLayout;
       $this->mountSidebarBehaviour($sidebar);
       $this->mountNavigationBehaviour($navigation);
       $this->mountFooterBehaviour($footer);
       $this->renderViewSettings();
+    }
 
+    public function setDefaultBase()
+    {
+      return $this->base = base_layouts();
     }
 
 

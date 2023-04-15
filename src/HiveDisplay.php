@@ -4,4 +4,5 @@ namespace Sixincode\HiveDisplay;
 
 class HiveDisplay
 {
+  
 }
