@@ -78,7 +78,11 @@ class LayoutTemplateElement extends Component
 
     public function setDefaultBase()
     {
-      return $this->base = base_layouts();
+      if (function_exists('base_layouts')) {
+        return $this->base = base_layouts();
+      }else{
+        $this->getBlankBase();
+      }
     }
 
 

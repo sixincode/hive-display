@@ -64,7 +64,11 @@ class HeaderTemplateElement extends Component
 
     public function setDefaultBase()
     {
-      return $this->base = base_headers();
+      if (function_exists('base_footers')) {
+        return $this->base = base_footers();
+      }else{
+        $this->getBlankBase();
+      }
     }
 
 

@@ -64,7 +64,11 @@ class SidebarTemplateElement extends Component
 
     public function setDefaultBase()
     {
-      return $this->base = base_sidebars();
+      if (function_exists('base_sidebars')) {
+        return $this->base = base_sidebars();
+      }else{
+        $this->getBlankBase();
+      }
     }
 
 }

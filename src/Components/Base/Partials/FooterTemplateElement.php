@@ -64,7 +64,11 @@ class FooterTemplateElement extends Component
 
     public function setDefaultBase()
     {
-      return $this->base = base_footers();
+      if (function_exists('base_footers')) {
+        return $this->base = base_footers();
+      }else{
+        $this->getBlankBase();
+      }
     }
 
 
