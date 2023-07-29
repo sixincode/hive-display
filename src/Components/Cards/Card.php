@@ -15,4 +15,9 @@ class Card extends CardTemplateElement
     {
       return $this->component = config('hive-display.defaultViews.defaultCard');
     }
+
+    public function setDefaultBase()
+    {
+      return $this->base = config('hive-display.defaultViewsBase');
+    }
 }

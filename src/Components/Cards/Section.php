@@ -15,4 +15,9 @@ class Section extends CardTemplateElement
   {
     $this->component = config('hive-display.defaultViews.defaultSection');
   }
+
+  public function setDefaultBase()
+  {
+    return $this->base = config('hive-display.defaultViewsBase');
+  }
 }

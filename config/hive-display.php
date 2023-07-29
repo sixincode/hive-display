@@ -40,6 +40,7 @@ return [
       'defaultForm'          => 'defaultForm',
       'defaultLink'          => 'defaultLink',
       'defaultList'          => 'defaultList',
+      'defaultMegaMenu'      => 'defaultMegaMenu',
       'defaultModal'         => 'defaultModal',
       'defaultPage'          => 'defaultPage',
       'defaultSlideOver'     => 'defaultSlideOver',

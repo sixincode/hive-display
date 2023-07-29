@@ -64,8 +64,8 @@ class NavigationTemplateElement extends Component
 
     public function setDefaultBase()
     {
-      if (function_exists('base_navigations')) {
-        return $this->base = base_navigations();
+      if (function_exists('base_footers')) {
+        return $this->base = base_footers();
       }else{
         $this->getBlankBase();
       }

@@ -71,7 +71,7 @@ trait RenderingViewTrait
        if($checkBase){
           $this->setDefaultBase();
        }else{
-          $this->getBlankBase();
+          $this->base = $this->getBlankBase();
        }
      }
 
@@ -104,6 +104,6 @@ trait RenderingViewTrait
 
    public function getBlankBase()
    {
-     return $this->base = "hive-display::components";
+     return "hive-display::components";
    }
 }

@@ -20,6 +20,7 @@ return [
     // 'form'         => Components\Forms\Form::class,
     'list'         => Components\Lists\List::class,
     'link'         => Components\Links\Link::class,
+    'mega-menu'    => Components\Dropdowns\MegaMenu::class,
     'modal'        => Components\SlideOvers\Modal::class,
     // 'page'         => Components\Pages\Page::class,
     'section'      => Components\Cards\Section::class,

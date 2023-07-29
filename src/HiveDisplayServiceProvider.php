@@ -20,6 +20,7 @@ class HiveDisplayServiceProvider extends PackageServiceProvider
             ->name('hive-display')
             ->hasConfigFile(['hive-display','hive-display-components','hive-menu'])
             ->hasViews()
+            ->hasIcons()
             ->hasMigration('create_hive-display_table')
             ->hasCommand(HiveDisplayCommand::class);
     }
