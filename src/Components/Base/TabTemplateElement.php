@@ -20,6 +20,7 @@ class TabTemplateElement extends Component
     public $active;
     public $naming;
     public array $tabs;
+    public array $icons;
     public array $content;
     public array $urls;
     public array $images;
@@ -33,6 +34,7 @@ class TabTemplateElement extends Component
       $class = null,
       $type = null,
       $texts = [],
+      $icons = [],
       $content = [],
       $urls = [],
       $images = [],
@@ -57,18 +59,19 @@ class TabTemplateElement extends Component
       $this->properties = $properties;
       $this->padding = $padding;
       $this->active = $active;
+      $this->icons = $icons;
 
       $this->renderViewSettings();
-      $this->makeTabs($tabs);
+      $this->makeTabs($tabs, $icons);
 
       if(method_exists(self::class,'postConstruct')){
         $this->postConstruct();
       }
      }
 
-     private function makeTabs($tabs){
+     private function makeTabs($tabs, $icons){
       foreach ($tabs as $key => $tab) {
-        $this->tabs[Str::snake(strtolower($tab))] = $tab;
+        $this->tabs[Str::snake(strtolower($tab))] = ['name' => $tab, 'icon' => $icons[$key]];
       }
 
       if(! $this->active){

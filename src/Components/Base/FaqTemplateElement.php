@@ -6,62 +6,70 @@ use Illuminate\View\Component;
 use Sixincode\HiveDisplay\Traits\RenderingViewTrait;
 use Illuminate\Support\Str;
 
-class CardTemplateElement extends Component
+class FaqTemplateElement extends Component
 {
     use RenderingViewTrait;
 
     public $name;
-    public $title;
-    public $identification;
     public $source;
     public $component;
+    public $identification;
     public $class;
     public $padding;
     public $type;
-    public array $details;
-    public array $texts;
+    public $active;
+    public $naming;
+    public array $icons;
     public array $content;
-    public array $buttons;
+    public array $urls;
     public array $images;
     public array $properties;
 
     public function __construct(
       $name = null,
-      $title = null,
-      $identification = null,
       $source = null,
       $component = null,
+      $identification = null,
       $class = null,
       $type = null,
-      $padding = true,
-      $details = [],
       $texts = [],
+      $icons = [],
       $content = [],
-      $buttons = [],
+      $urls = [],
       $images = [],
       $properties = [],
+      $naming = 'activeOption',
+      $active = null,
+      $padding = false,
     )
     {
       $this->name = $name;
-      $title ? $this->title = $title : $this->title = $name;
-      $this->identification = $identification;
+      $this->naming = $naming;
       $this->source = $source;
-      $this->padding = $padding;
       $this->component = $component;
+      $this->identification = $identification;
       $this->class = $class;
       $this->type = $type;
-      $this->details = array_merge_recursive($details);
-      // $this->details = Arr::collapse($details);
-
-      $this->texts = array_merge_recursive($texts);
-      $this->content = array_merge_recursive($content);
-      $this->buttons[] = $buttons;
-      $this->images[] = $images;
+      $this->texts = $texts;
+      $this->content = $content;
+      $this->urls = $urls;
+      $this->images = $images;
       $this->properties = $properties;
+      $this->padding = $padding;
+      $this->active = $active;
+      $this->icons = $icons;
 
       $this->renderViewSettings();
 
-    }
+      if(method_exists(self::class,'postConstruct')){
+        $this->postConstruct();
+      }
+     }
+ 
 
+     public function setDefaultFramework()
+    {
+      return $this->cssFramework = config('hive-form.cssFrameworks.tailwind');
+    }
 
 }

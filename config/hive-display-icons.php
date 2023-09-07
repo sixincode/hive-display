@@ -4,6 +4,7 @@
 return [
   '6ixin',
   'address',
+  'addToCart',
   'analytics',
   'announcement',
   'apply',
@@ -20,6 +21,7 @@ return [
   'category',
   'category_add',
   'channel',
+  'check',
   'circles',
   'comment',
   'community',
@@ -44,6 +46,7 @@ return [
   'form',
   'hashtag',
   'hire',
+  'history',
   'hosting',
   'home',
   'industry',
@@ -51,6 +54,7 @@ return [
   'job',
   'link',
   'location',
+  'lock',
   'logo',
   'main',
   'marketing',
@@ -76,7 +80,15 @@ return [
   'webApp',
   'website',
   'whois',
-  'wordpress'
+  'wordpress',
+
+
+  'twitter',
+  'instagram',
+  'youtube',
+  'gitHub',
+  'linkedIn',
+  'facebook',
 
 
 

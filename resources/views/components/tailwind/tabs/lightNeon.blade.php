@@ -1,24 +1,41 @@
+@props(['active' => '', 'classButton' => '', 'tabContentClass' => ''])
+
+@php
+  $tabContentClass='';
+  $buttonClass = 'inline-flex shrink-0 items-center gap-2 border-b-2 border-transparent px-3 pb-3 font-semibold text-slate-500 hover:border-gray-300 hover:text-gray-700';
+  $buttonClassActive = 'border-blue-500 text-blue-600';
+@endphp
 <div class="{{$class}}">
   <div
     x-data="{ activeTab: '{{$active}}' }"
     x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : '{{$active}}'"
     >
-    <ul class="grid grid-cols-{{count($tabs)}} rounded-md text-gray-400">
-        @foreach($tabs as $index => $tab)
-        <li>
+     <div class="border-b border-gray-200">
+     <x-hive-display-section source='sections' component='boxedXSection'>
+      <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+         @foreach($tabs as $index => $tab)
           <a
-           x-on:click="activeTab = '{{$tab}}'"
-           :class="{ 'border-blue-600 text-blue-400 border-b-3': activeTab === '{{$tab}}' }"
-           href="#{{$tab}}"
-           class="
-            capitalize items-center px-6 p-2 justify-center border-b-2 border-gray-100 ext-gray-500 hover:text-blue-500 hover:border-blue-400 whitespace-nowrap flex"
-          >
-           {{$tab}}
+           x-on:click="activeTab = '{{$tab['name']}}'"
+           :class="{ '{{$buttonClassActive}}': activeTab === '{{$tab['name']}}' }"
+           href="#{{$tab['name']}}"
+           class="{{$buttonClass}} {{$classButton}} transition-all">
+           @if(!empty($icons))
+           <x-hive-form-icon
+            path='{{$tab["icon"]}}'
+            width='4'
+            height='4'
+            size='1.5'
+            />
+            @endif
+           <span>
+              {{$tab["name"]}}
+           </span>
           </a>
-        </li>
         @endforeach
-      </ul>
-    <div class="mt-4">
+      </nav>
+    </x-hive-display-section>
+    </div>
+     <div class="{{$tabContentClass}}">
       {{$tabsContent}}
     </div>
   </div>

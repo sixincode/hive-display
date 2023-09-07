@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 use Sixincode\HiveDisplay\Traits\RenderingViewTrait;
 use Illuminate\Support\Str;
 
-class CardTemplateElement extends Component
+class TableTemplateElement extends Component
 {
     use RenderingViewTrait;
 
@@ -17,12 +17,8 @@ class CardTemplateElement extends Component
     public $component;
     public $class;
     public $padding;
+    public $divide;
     public $type;
-    public array $details;
-    public array $texts;
-    public array $content;
-    public array $buttons;
-    public array $images;
     public array $properties;
 
     public function __construct(
@@ -33,35 +29,38 @@ class CardTemplateElement extends Component
       $component = null,
       $class = null,
       $type = null,
+      $divide = true,
       $padding = true,
-      $details = [],
-      $texts = [],
-      $content = [],
-      $buttons = [],
-      $images = [],
       $properties = [],
     )
     {
       $this->name = $name;
-      $title ? $this->title = $title : $this->title = $name;
+      $this->title = $title;
       $this->identification = $identification;
       $this->source = $source;
       $this->padding = $padding;
       $this->component = $component;
       $this->class = $class;
-      $this->type = $type;
-      $this->details = array_merge_recursive($details);
-      // $this->details = Arr::collapse($details);
-
-      $this->texts = array_merge_recursive($texts);
-      $this->content = array_merge_recursive($content);
-      $this->buttons[] = $buttons;
-      $this->images[] = $images;
+      $this->divide = $divide;
       $this->properties = $properties;
+      $this->setTableType($this->type);
 
       $this->renderViewSettings();
 
     }
 
-
+    public function setTableType($type = 'regular')
+    {
+      switch ($type){
+          case 'list':
+             $this->type = 'list';
+             break;
+          case 'complex':
+             $this->type = 'complex';
+             break;
+          default:
+             $this->type = 'regular';
+             break;
+          }
+    }
 }
