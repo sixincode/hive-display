@@ -1,4 +1,12 @@
-@props(['align' => 'right', 'width' => '48', 'height' => '72', 'classContent' => 'bg-white', 'class' => ''])
+@props([
+'align' => 'right',
+'margin' => 'mt-0',
+'position' => 'absolute',
+'width' => '48',
+'height' => '72',
+'classContent' => 'bg-white',
+'class' => ''
+])
 
 @php
 switch ($align) {
@@ -37,7 +45,7 @@ switch ($width) {
             x-transition:leave="transition ease-in duration-75"
             x-transition:leave-start="transform opacity-100 scale-100"
             x-transition:leave-end="transform opacity-0 scale-95"
-            class="absolute z-50 mt-0.5 mb-2 w-full max-w-{{ $width }} rounded-md shadow-lg {{ $alignmentClasses }} {{ $class }}"
+            class="{{ $class }} {{ $position }} z-50 {{ $margin }} mb-2 w-full max-w-{{ $width }} rounded-md shadow-lg {{ $alignmentClasses }}"
             style="display: none;"
             @click="open = false">
             <div class="">
