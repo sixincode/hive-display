@@ -47,6 +47,9 @@ return [
     'footer'       => Components\Partials\Footers\Footer::class,
     'footer-app'   => Components\Partials\Footers\FooterApp::class,
     'footer-admin' => Components\Partials\Footers\FooterAdmin::class,
+
+    'lang-switch'   => Components\Elements\LangSwitch::class,
+
     ],
   /*
   |--------------------------------------------------------------------------

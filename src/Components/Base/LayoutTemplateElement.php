@@ -81,7 +81,7 @@ class LayoutTemplateElement extends Component
       if (function_exists('base_layouts')) {
         return $this->base = base_layouts();
       }else{
-        return $this->base =  $this->getBlankBase();
+        $this->getBlankBase();
       }
     }
 

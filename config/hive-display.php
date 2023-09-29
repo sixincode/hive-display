@@ -22,6 +22,8 @@ return [
       'defaultSource'        => 'default',
       'defaultComponent'     => 'defaultComponent',
 
+      'accordionsSource'     => 'tabs.accordions',
+      'accordionsItemSource' => 'tabs.accordions.items',
       'bannersSource'        => 'banners',
       'buttonsSource'        => 'buttons',
       'cardsSource'          => 'cards',
@@ -29,6 +31,7 @@ return [
       'faqSource'            => 'faqs',
       'faqItemSource'        => 'faqs',
       'formsSource'          => 'forms',
+      'langSwitchSource'     => 'elements.langSwitch',
       'linksSource'          => 'links',
       'listsSource'          => 'lists',
       'modalsSource'         => 'modals',
@@ -39,6 +42,8 @@ return [
       'tablesSource'         => 'tables',
       'tablesItemSource'     => 'tables.items',
 
+      'defaultAccordion'     => 'defaultAccordion',
+      'defaultAccordionItem' => 'defaultAccordionItem',
       'defaultBanner'        => 'defaultBanner',
       'defaultButtonDouble'  => 'defaultButtonDouble',
       'defaultCard'          => 'defaultCard',
@@ -46,6 +51,7 @@ return [
       'defaultFaq'           => 'defaultFaq',
       'defaultFaqItem'       => 'defaultFaqItem',
       'defaultForm'          => 'defaultForm',
+      'defaultLangswitch'    => 'defaultLangswitch',
       'defaultLink'          => 'defaultLink',
       'defaultList'          => 'defaultList',
       'defaultMegaMenu'      => 'defaultMegaMenu',
@@ -56,11 +62,6 @@ return [
       'defaultTab'           => 'defaultTab',
       'defaultTable'         => 'defaultTable',
       'defaultTableItem'     => 'defaultTableItem',
-
-      'accordionsSource'     => 'tabs.accordions',
-      'accordionsItemSource' => 'tabs.accordions.items',
-      'defaultAccordion'     => 'defaultAccordion',
-      'defaultAccordionItem' => 'defaultAccordionItem',
 
 
       'layouts'               => [

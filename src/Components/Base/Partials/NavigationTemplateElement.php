@@ -67,7 +67,7 @@ class NavigationTemplateElement extends Component
       if (function_exists('base_footers')) {
         return $this->base = base_footers();
       }else{
-        return $this->base =  $this->getBlankBase();
+        $this->getBlankBase();
       }
     }
 

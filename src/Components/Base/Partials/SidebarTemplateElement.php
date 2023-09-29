@@ -67,7 +67,7 @@ class SidebarTemplateElement extends Component
       if (function_exists('base_sidebars')) {
         return $this->base = base_sidebars();
       }else{
-        return $this->base =  $this->getBlankBase();
+        $this->getBlankBase();
       }
     }
 

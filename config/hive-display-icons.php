@@ -82,6 +82,7 @@ return [
   'store',
   'tld',
   'transfer',
+  'translantion',
   'video',
   'vpn',
   'vps',
