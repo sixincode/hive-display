@@ -1,8 +1,9 @@
 <?php
-// if (! function_exists('xxxxxxx')) {
-//     /** Create a function. */
-//     function xxxxxxx()
-//     {
-//         return;
-//     }
-// }
+function check_getLayoutApp()
+{
+  if(function_exists('getLayoutApp')) {
+      return getLayoutApp();
+  }else{
+      return config('hive-display-layouts.app.default');
+  }
+}
