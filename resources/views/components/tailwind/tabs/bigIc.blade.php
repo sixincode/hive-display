@@ -5,21 +5,26 @@
         ])
 @php
   $tabContentClass='';
-  $buttonClass = 'inline-flex shrink-0 items-center gap-2 border-2 border-transparent px-3 pb-3 font-semibold text-slate-500 hover:border-gray-300 hover:text-gray-700';
-  $buttonClassActive = 'border bg-blue-100/40 border-blue-500 text-blue-600 font-semibold';
+  $buttonClass = ' border-b-4 cursor-pointer px-3 py-1.5 gap-x-2 flex inline-wrap capitalize text-sm sm:text-lg md:text-2xl justify-center items-center';
+  $buttonClassActive = 'border-blue-500 text-blue-600 font-semibold';
 @endphp
 <div class="{{$class}}">
   <div
     x-data="{ activeTab: '{{$active}}' }"
     >
-      <ul class="grid grid-cols-{{count($tabs)}} gap-2 text-gray-500 hover:text-gray-700">
+      <ul class="grid grid-cols-{{count($tabs)}} text-gray-500 hover:text-gray-700">
         @foreach($tabs as $index => $tab)
         <li>
           <a
            x-on:click="activeTab = '{{$tab['name']}}'"
            :class="{ '{{$buttonClassActive}}': activeTab === '{{$tab['name']}}' }"
-           class="cursor-pointer px-3 py-1.5 flex inline-wrap rounded-md capitalize justify-center items-center bg-slate-50/70"
+           class="{{$buttonClass}}"
           >
+          @if($tab['icon'])
+            <img
+            :class="{ 'opacity-100': activeTab === '{{$tab['name']}}' }"
+            class="opacity-65 h-20 w-20 p-0 rounded-full" src="{{$tab['icon']}}" alt="">
+          @endif
           {{headline($tab['name'])}}
           </a>
         </li>

@@ -14,9 +14,12 @@ return [
   'blade' => [
     'accordion' => Components\Tabs\Accordion::class,
     'accordion-item' => Components\Tabs\AccordionItem::class,
+    'action-message' => Components\Actions\Message::class,
     'banner'       => Components\Banners\Banner::class,
     'button-double'=> Components\Buttons\ButtonDouble::class,
+    'button-array' => Components\Buttons\ButtonArray::class,
     'card'         => Components\Cards\Card::class,
+    'dialog-modal' => Components\SlideOvers\DialogModal::class,
     'dropdown'     => Components\Dropdowns\Dropdown::class,
     'faq'          => Components\Faqs\Faq::class,
     'faq-item'     => Components\Faqs\FaqItem::class,
@@ -25,15 +28,18 @@ return [
     'list'         => Components\Lists\List::class,
     'link'         => Components\Links\Link::class,
     'mega-menu'    => Components\Dropdowns\MegaMenu::class,
+    'menu-dots'    => Components\Dropdowns\MenuDots::class,
     'modal'        => Components\SlideOvers\Modal::class,
     // 'page'         => Components\Pages\Page::class,
-    'section'      => Components\Cards\Section::class,
-    'section-title'  => Components\Cards\SectionTitle::class,
-    'section-border' => Components\Cards\SectionBorder::class,
+    'section'      => Components\Cards\SectionCard::class,
+    'section-title'  => Components\Section\SectionTitle::class,
+    'section-border' => Components\Section\SectionBorder::class,
     'tabs'         => Components\Tabs\Tab::class,
     'table'        => Components\Tables\Table::class,
     'table-item'   => Components\Tables\TableItem::class,
     'slide-over'   => Components\SlideOvers\SlideOver::class,
+
+    'chapter-contact' => Components\Chapters\Contact::class,
 
     'layout'       => Components\Layouts\Layout::class,
     'layout-app'   => Components\Layouts\LayoutApp::class,
@@ -50,9 +56,6 @@ return [
     'footer'       => Components\Partials\Footers\Footer::class,
     'footer-app'   => Components\Partials\Footers\FooterApp::class,
     'footer-admin' => Components\Partials\Footers\FooterAdmin::class,
-
-    'lang-switch'   => Components\Elements\LangSwitch::class,
-
     ],
   /*
   |--------------------------------------------------------------------------
@@ -70,14 +73,14 @@ return [
   | Components Prefix
   |--------------------------------------------------------------------------
   |
-  | This value will set a prefix for all Shopper Admin components.
-  | By default it's shopper. This is useful if you want to avoid
+  | This value will set a prefix for all Hive Display Components.
+  | By default it's 'hive-display'. This is useful if you want to avoid
   | collision with components from other libraries.
   |
   | For example, it's reference components like:
   |
-  | <x-hive-index />
-  | <livewire:hive-index />
+  | <x-hive-display />
+  | <livewire:hive-display />
   |
   */
   'prefix' => 'hive-display',

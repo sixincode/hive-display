@@ -1,6 +1,6 @@
 <?php
 
-namespace Sixincode\HiveDisplay\Components\Partials\Navigation;
+namespace Sixincode\HiveDisplay\Components\Partials\Navigations;
 
 use Sixincode\HiveDisplay\Components\Base\Partials\NavigationTemplateElement;
 

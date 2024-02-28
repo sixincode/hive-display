@@ -71,7 +71,7 @@ class TabTemplateElement extends Component
 
      private function makeTabs($tabs, $icons){
       foreach ($tabs as $key => $tab) {
-        $this->tabs[Str::snake(strtolower($tab))] = ['name' => $tab, 'icon' => $icons[$key]];
+        $this->tabs[Str::snake(strtolower($tab))] = ['name' => $tab, 'icon' => $icons[$key] ?? ''];
       }
 
       if(! $this->active){

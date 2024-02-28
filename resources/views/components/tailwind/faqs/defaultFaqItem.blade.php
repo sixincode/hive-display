@@ -12,16 +12,15 @@
         'iconWrapClass' => '',
         ])
 @php
-  $classFaqElement='flex text-slate-700 items-center justify-between w-full py-2.5 text-left select-none font-semibold';
-  $class = '';
+  $classFaqElement='flex text-gray-800 items-center justify-between w-full py-4 text-left select-none font-semibold';
   $classActive = 'text-blue-600';
   $iconWrapClass = 'bg-slate-100 rounded-full p-1';
 @endphp
 <div x-data="{ id: $id('accordion') }"  class="cursor-pointer group">
-  <button type="button"  @click="setActiveAccordion(id)"  class="{{$class}} {{$classFaqElement}}" :class="{ '{{$classActive}}' : activeAccordion==id }">
+  <button type="button"  @click="setActiveAccordion(id)"  class="{{$class}} {{$classFaqElement}}" >
     <div class="flex gap-2 w-5/6">
       @if($icon)
-      <span span class="{{$iconWrapClass}}">
+      <span class="{{$iconWrapClass}}">
         <x-hive-form-icon
                path='{{$icon}}'
                width='{{$iconWidth}}'
@@ -31,7 +30,7 @@
                />
       </span>
       @endif
-      <div class="{{$titleClass}}">
+      <div class="{{$titleClass}}" :class="{ '{{$classActive}}' : activeAccordion==id }">
         {{$title}}
       </div>
     </div>
@@ -40,7 +39,7 @@
      </svg>
   </button>
   <div x-cloak x-show="activeAccordion==id" x-collapse>
-    <div class="pb-2 pl-8 opacity-70">
+    <div class="p-2 pb-4 opacity-70">
       {{$slot}}
       </div>
   </div>

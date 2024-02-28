@@ -8,12 +8,12 @@ class ButtonDouble extends CardTemplateElement
 {
     public function setDefaultSource()
     {
-      return $this->source = config('hive-display.defaultViews.buttonsSource');
+      return $this->source = config('hive-display-views.buttonsSource');
     }
 
     public function setDefaultComponent()
     {
-      return $this->component = config('hive-display.defaultViews.defaultButtonDouble');
+      return $this->component = config('hive-display-views.defaultButtonDouble');
     }
 
     public function setDefaultBase()

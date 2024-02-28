@@ -18,7 +18,7 @@ class HiveDisplayServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('hive-display')
-            ->hasConfigFile(['hive-display','hive-display-layouts','hive-display-components','hive-menu'])
+            ->hasConfigFile(['hive-display','hive-display-views','hive-display-layouts','hive-display-components','hive-menu'])
             ->hasViews()
             ->hasIcons()
             ->hasMigration('create_hive-display_table')

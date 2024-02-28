@@ -1,10 +1,10 @@
 @props([
 'align' => 'right',
-'margin' => 'mt-2',
+'margin' => 'mt-0',
 'position' => 'absolute',
 'width' => '48',
 'height' => '72',
-'classContent' => '',
+'classContent' => 'bg-white',
 'class' => ''
 ])
 
@@ -32,7 +32,7 @@ switch ($width) {
         break;
 }
 @endphp
-<div class="relative">
+
 <div class="relative" x-data="{ open: false }" @click.away="open = false" @close.stop="open = false">
     <div @click="open = ! open">
         {{ $trigger }}
@@ -45,14 +45,17 @@ switch ($width) {
             x-transition:leave="transition ease-in duration-75"
             x-transition:leave-start="transform opacity-100 scale-100"
             x-transition:leave-end="transform opacity-0 scale-95"
-            class="{{ $class }} {{ $position }} z-50 {{ $margin }} w-{{ $width }} rounded shadow-lg {{ $alignmentClasses }}"
+            class="{{ $class }} {{ $position }} z-50 {{ $margin }} mb-2 w-full max-w-{{ $width }} rounded-md shadow-lg {{ $alignmentClasses }}"
             style="display: none;"
             @click="open = false">
-          {{ $header ?? '' }}
-         <div class="rounded ring-1 ring-black ring-opacity-5 {{ $classContent }} bg-white dark:bg-gray-700 max-h-{{$height}} overflow-auto">
-            {{ $content ?? $slot }}
+            <div class="">
+              {{ $header ?? '' }}
+            </div>
+        <div class="rounded-md ring-1 ring-black ring-opacity-5 {{ $classContent }} max-h-{{$height}} overflow-auto">
+            {{ $content }}
         </div>
-           {{ $footer ?? '' }}
-     </div>
-  </div>
+        <div class="">
+          {{ $footer ?? '' }}
+        </div>
+    </div>
 </div>
