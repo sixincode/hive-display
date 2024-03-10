@@ -17,7 +17,7 @@ switch ($align) {
         $alignmentClasses = 'origin-top-right right-0';
         break;
 }
- 
+
 @endphp
 
 <div class="{{$position}}" x-data="{ open: false }" @click.away="open = false" @close.stop="open = false">
