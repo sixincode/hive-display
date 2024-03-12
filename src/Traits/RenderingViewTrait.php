@@ -2,11 +2,9 @@
 
 namespace Sixincode\HiveDisplay\Traits;
 use Illuminate\Support\Str;
-use Illuminate\Support\Traits\Macroable;
 
 trait RenderingViewTrait
 {
-  use Macroable;
   public $base;
   public $cssFramework;
   public $source;
@@ -14,12 +12,17 @@ trait RenderingViewTrait
 
   public function useBootstrapCss()
   {
-    $this->cssFramework =  config('hive-display.cssFrameworks.bootstrap');
+    $this->cssFramework = '.'.config('hive-display.cssFrameworks.bootstrap');
   }
 
   public function useTailwindCss()
   {
-    $this->cssFramework = config('hive-display.cssFrameworks.tailwind');
+    $this->cssFramework = '.'.config('hive-display.cssFrameworks.tailwind');
+  }
+
+  public function useNoPredefinedCss()
+  {
+    $this->cssFramework = '';
   }
 
   public function setCssFramework($framework = 'tailwind')
@@ -30,6 +33,9 @@ trait RenderingViewTrait
            break;
         case 'bootstrap' || config('hive-display.cssFrameworks.bootstrap'):
            $this->useBootstrapCss();
+           break;
+        case 'null' || config('hive-display.cssFrameworks.null'):
+           $this->useNoPredefinedCss();
            break;
         default:
            $this->useTailwindCss();
@@ -84,7 +90,7 @@ trait RenderingViewTrait
 
    public function render()
    {
-     return view($this->base.'.'.$this->cssFramework.'.'.$this->source.'.'.$this->component);
+     return view($this->base.$this->cssFramework.'.'.$this->source.'.'.$this->component);
    }
 
    public function getBlankSource()
@@ -99,7 +105,7 @@ trait RenderingViewTrait
 
    public function getBlankFramework()
    {
-     return config('hive-display.cssFrameworks.tailwind');
+     return '.'.config('hive-display.cssFrameworks.tailwind');
    }
 
    public function getBlankBase()

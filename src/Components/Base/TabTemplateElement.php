@@ -21,6 +21,7 @@ class TabTemplateElement extends Component
     public $naming;
     public array $tabs;
     public array $icons;
+    public array $titles;
     public array $content;
     public array $urls;
     public array $images;
@@ -33,7 +34,7 @@ class TabTemplateElement extends Component
       $identification = null,
       $class = null,
       $type = null,
-      $texts = [],
+      $titles = [],
       $icons = [],
       $content = [],
       $urls = [],
@@ -52,26 +53,30 @@ class TabTemplateElement extends Component
       $this->identification = $identification;
       $this->class = $class;
       $this->type = $type;
-      $this->texts = $texts;
       $this->content = $content;
       $this->urls = $urls;
       $this->images = $images;
       $this->properties = $properties;
       $this->padding = $padding;
       $this->active = $active;
+      $this->titles = $titles;
       $this->icons = $icons;
 
       $this->renderViewSettings();
-      $this->makeTabs($tabs, $icons);
+      $this->makeTabs($tabs, $titles, $icons);
 
       if(method_exists(self::class,'postConstruct')){
         $this->postConstruct();
       }
      }
 
-     private function makeTabs($tabs, $icons){
+     private function makeTabs($tabs, $titles, $icons){
       foreach ($tabs as $key => $tab) {
-        $this->tabs[Str::snake(strtolower($tab))] = ['name' => $tab, 'icon' => $icons[$key] ?? ''];
+        $this->tabs[Str::snake(strtolower($tab))] = [
+          'name'  => $tab,
+          'title' => $titles[$key] ?? '',
+          'icon'  => $icons[$key] ?? ''
+        ];
       }
 
       if(! $this->active){
@@ -79,9 +84,5 @@ class TabTemplateElement extends Component
       }
      }
 
-     public function setDefaultFramework()
-    {
-      return $this->cssFramework = config('hive-form.cssFrameworks.tailwind');
-    }
 
 }

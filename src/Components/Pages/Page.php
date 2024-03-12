@@ -15,4 +15,9 @@ class Page extends PageTemplateElement
     {
       return $this->component = config('hive-display.defaultViews.defaultPage');
     }
+
+    public function setDefaultFramework()
+    {
+      return $this->cssFramework = config('hive-display.cssFrameworks.null');
+    }
 }

@@ -65,11 +65,6 @@ class FaqTemplateElement extends Component
         $this->postConstruct();
       }
      }
- 
 
-     public function setDefaultFramework()
-    {
-      return $this->cssFramework = config('hive-form.cssFrameworks.tailwind');
-    }
 
 }

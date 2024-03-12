@@ -109,6 +109,7 @@ return [
     ],
 
     'cssFrameworks'    => [
+      'null'                => '',
       'tailwind'            => 'tailwind',
       'bootstrap'           => 'bootstrap',
       ],

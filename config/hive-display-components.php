@@ -30,7 +30,7 @@ return [
     'mega-menu'    => Components\Dropdowns\MegaMenu::class,
     'menu-dots'    => Components\Dropdowns\MenuDots::class,
     'modal'        => Components\SlideOvers\Modal::class,
-    // 'page'         => Components\Pages\Page::class,
+    'page'         => Components\Pages\Page::class,
     'section'      => Components\Cards\SectionCard::class,
     'section-title'  => Components\Section\SectionTitle::class,
     'section-border' => Components\Section\SectionBorder::class,
